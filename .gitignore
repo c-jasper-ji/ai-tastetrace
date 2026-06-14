@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vite/
+.npm-cache/
+coverage/
+*.log
+*.pid
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+docs/rendered/
+docs/.pdf-build/
+
