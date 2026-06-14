@@ -12,4 +12,4 @@ coverage/
 Thumbs.db
 docs/rendered/
 docs/.pdf-build/
-
+docs/.model-pdf-build/

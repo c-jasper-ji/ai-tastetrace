@@ -2,7 +2,7 @@
 
 ## Status
 
-App prototype complete; GitHub publication intentionally deferred.
+App prototype and public GitHub Pages release complete.
 
 ## Completed
 
@@ -18,6 +18,8 @@ App prototype complete; GitHub publication intentionally deferred.
 - Automated recommendation-engine tests.
 - Production build and dependency audit.
 - English README, technical documentation, prompt pack, and visual PDF guide.
+- Standalone 13-page model technical specification PDF.
+- Public GitHub repository and GitHub Pages deployment.
 
 ## Verification
 
@@ -25,15 +27,16 @@ App prototype complete; GitHub publication intentionally deferred.
 - `npm run build`
 - `npm audit`
 - desktop and mobile visual review
+- 13-page model PDF render and page-by-page visual review
 
 ## Known limitations
 
 - Curated prototype data rather than live APIs.
 - Derived feature values rather than audio embeddings.
 - Browser-only persistence.
-- No public deployment in this phase.
+- MusicBrainz, Essentia, KNN, and backend services are specified but not yet implemented.
 
 ## Next phase
 
-Prepare repository metadata, choose a licence, initialise Git, publish to GitHub, and configure GitHub Pages.
-
+Implement the MusicBrainz identity layer, local Essentia feature pipeline,
+KNN candidate retrieval, MMR validation, and versioned backend services.
