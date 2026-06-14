@@ -8,6 +8,11 @@ The application is designed for the Imperial College London group-project option
 
 `User taste evidence -> feature model -> hybrid ranking -> diversity reranking -> explanation -> feedback`
 
+Public demo: https://c-jasper-ji.github.io/ai-tastetrace/
+
+Technical model guide:
+[TASTETRACE_MODEL_TECHNICAL_SPECIFICATION.pdf](TASTETRACE_MODEL_TECHNICAL_SPECIFICATION.pdf)
+
 ## Product problem
 
 Mainstream music recommenders are effective at reducing search effort, but they can also:
@@ -125,6 +130,7 @@ The project demonstrates a scalable data architecture; it does not claim that th
 |-- TasteTrace_README_Prompt_Pack/
 |   `-- agent-prompts/           # Structured future build prompts
 |-- TASTETRACE_PROJECT_GUIDE.pdf # Visual project specification
+|-- TASTETRACE_MODEL_TECHNICAL_SPECIFICATION.pdf
 |-- BUILD_STATUS.md
 |-- START_TASTETRACE.cmd
 `-- start-tastetrace.ps1
@@ -139,7 +145,9 @@ TasteTrace should be presented as an AI-assisted, ML-informed product prototype:
 - **Data architecture:** structured track entities, features, evidence metadata, and future source adapters.
 - **Responsible claims:** no invented live ratings, no claim that the fit index is a calibrated probability, and no claim of production-scale model accuracy.
 
-See [docs/MODEL_CARD.md](docs/MODEL_CARD.md) and [docs/PRIVACY_AND_ETHICS.md](docs/PRIVACY_AND_ETHICS.md).
+See [docs/MODEL_CARD.md](docs/MODEL_CARD.md),
+[docs/MODEL_TECHNICAL_SPECIFICATION.md](docs/MODEL_TECHNICAL_SPECIFICATION.md),
+and [docs/PRIVACY_AND_ETHICS.md](docs/PRIVACY_AND_ETHICS.md).
 
 ## Current limitations
 
@@ -153,15 +161,15 @@ See [docs/MODEL_CARD.md](docs/MODEL_CARD.md) and [docs/PRIVACY_AND_ETHICS.md](do
 ## Production roadmap
 
 1. Use MusicBrainz recording and release-group IDs as canonical identifiers.
-2. Add permissioned MusicBrainz, ListenBrainz, and Last.fm adapters with caching.
-3. Replace derived features with licensed or locally extracted audio embeddings.
-4. Train and evaluate collaborative and learning-to-rank baselines.
-5. Measure precision, recall, catalogue coverage, novelty, intra-list diversity, and calibration.
-6. Add provenance timestamps and source-level confidence.
-7. Add a database and privacy-controlled user profiles.
-8. Deploy the static prototype through GitHub Pages in the next project phase.
+2. Use FMA for reproducible feature and retrieval experiments.
+3. Treat AcousticBrainz as optional historical enrichment, not a live dependency.
+4. Replace derived features with locally extracted Essentia or MusiCNN embeddings.
+5. Retrieve candidates with validated KNN or approximate-nearest-neighbour search.
+6. Apply MMR reranking and monitor artist, album, and catalogue exposure.
+7. Measure precision, recall, NDCG, coverage, novelty, and intra-list diversity.
+8. Add FastAPI, PostgreSQL, a vector index, provenance, and rollback controls.
 
 ## Licence
 
-No licence has been selected yet. Choose an open-source licence before public GitHub publication.
-
+No open-source licence has been selected yet. The repository is publicly
+visible, but reuse rights are not granted until a licence is added.

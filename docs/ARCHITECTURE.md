@@ -72,16 +72,22 @@ A production architecture should add:
 React frontend
       |
       v
-Typed API gateway
+FastAPI recommendation gateway
       |
-      +-- identity resolver -> MusicBrainz
-      +-- candidate service -> Last.fm / ListenBrainz
-      +-- feature service -> embeddings and tags
-      +-- ranking service -> versioned models
+      +-- identity and catalogue -> MusicBrainz + cache
+      +-- experiment corpus -> FMA
+      +-- optional archive -> AcousticBrainz
+      +-- feature workers -> Essentia / MusiCNN
+      +-- catalogue store -> PostgreSQL + provenance
+      +-- vector index -> pgvector / FAISS
+      +-- candidate retrieval -> KNN / ANN
+      +-- set construction -> MMR + hard caps
       +-- evidence service -> licensed review metadata
-      +-- feedback service -> privacy-controlled database
       `-- observability -> evaluation and drift monitoring
 ```
 
 Canonical identifiers should use MusicBrainz recording and release-group IDs where possible.
 
+The detailed variable definitions, hyperparameters, train/validation/test
+design, and batch rollback sequence are documented in
+`MODEL_TECHNICAL_SPECIFICATION.md`.

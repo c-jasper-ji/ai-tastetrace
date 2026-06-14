@@ -4,6 +4,12 @@
 
 Deterministic product prototype. Not a trained or calibrated production recommender.
 
+The specified production target is a public cold-start content recommender:
+MusicBrainz identity and metadata, FMA and locally extracted Essentia features,
+KNN or ANN candidate retrieval, and MMR diversity reranking. AcousticBrainz is
+treated only as optional historical enrichment because its ingestion project
+ended in 2022.
+
 ## Intended use
 
 - demonstrate explainable music recommendation;
@@ -69,7 +75,7 @@ Automated tests verify:
 
 A production model requires:
 
-- offline train/validation/test data;
+- an artist-grouped FMA train/validation/test design;
 - relevance labels from real interactions;
 - precision@k, recall@k, NDCG, coverage, novelty, and intra-list diversity;
 - baseline comparisons;
@@ -86,3 +92,6 @@ A production model requires:
 - no persistent server-side learning;
 - subjective audience-tier labels.
 
+See `MODEL_TECHNICAL_SPECIFICATION.md` and
+`TASTETRACE_MODEL_TECHNICAL_SPECIFICATION.pdf` for the explicit variables,
+KNN parameters, MMR parameters, backend services, and batch lifecycle.
