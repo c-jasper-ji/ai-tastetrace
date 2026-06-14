@@ -1,5 +1,7 @@
 # TasteTrace
 
+https://c-jasper-ji.github.io/ai-tastetrace/
+
 **Explainable, diversity-aware music discovery for listeners who want more than another popularity loop.**
 
 TasteTrace is a functional AI/ML product prototype. A listener selects several seed tracks, describes a discovery goal in natural language, and receives a diversified recommendation set with traceable component scores, artist-level discovery, and external review links.
